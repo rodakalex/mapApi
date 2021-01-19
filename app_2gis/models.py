@@ -16,7 +16,8 @@ class TypeCoord(models.Model):
 
 class Coord(models.Model):
     """Несколько координат может использоваться для нескольких маршрутов"""
-    title = models.CharField(max_length=255, verbose_name="Название")
+    title = models.CharField(max_length=255, verbose_name="Название", null=False)
+    city = models.CharField(max_length=255, verbose_name="Город", null=False)
     latitude = models.DecimalField(decimal_places=6, verbose_name="Широта", max_digits=8)
     longitude = models.DecimalField(decimal_places=6, verbose_name="Долгота", max_digits=8)
 

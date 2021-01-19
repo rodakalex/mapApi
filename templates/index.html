@@ -5,9 +5,32 @@
     <meta charset="UTF-8">
     <title>Карта маршрутов</title>
     <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
-    <script src="{% static "js/script.js" %}"></script>
 </head>
 <body>
-    <div id="map" style="width:500px; height:400px"></div>
+<script type="text/javascript">
+
+    DG.then(function () {
+        var map = DG.map('map', {
+            center: [55.030199, 82.920430],
+            zoom: 13
+        });
+        var myIcon = DG.icon({
+            iconUrl: "{% static "img/my-icon.png" %}",
+            iconSize: [20, 30],
+        });
+        DG.marker([55.030199, 82.920430], {icon: myIcon}).addTo(map);
+        DG.marker([55.031300, 82.920430], {icon: myIcon}).addTo(map);
+        DG.marker([55.032400, 82.920430], {icon: myIcon}).addTo(map);
+        DG.marker([55.033500, 82.920430], {icon: myIcon}).addTo(map);
+        DG.marker([55.034600, 82.920430], {icon: myIcon}).addTo(map);
+        DG.marker([55.013570, 82.920430], {icon: myIcon}).addTo(map);
+        DG.marker([55.036800, 82.920430], {icon: myIcon}).addTo(map);
+        {#        {% for marker in markers %}#}
+
+        {#        {% endfor %}#}
+
+    });
+</script>
+<div id="map" style="width:500px; height:400px"></div>
 </body>
 </html>
